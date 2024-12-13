@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView , Image , StyleSheet, Platform, TouchableOpacity, ScrollView , FlatList, Button } from 'react-native';
+import { SafeAreaView , Image , StyleSheet, Platform, TouchableOpacity, ScrollView , FlatList, Button, BackHandler } from 'react-native';
 import { Text, View } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -42,7 +42,48 @@ export default function HomeScreen() {
                       <Text style={styles.iconBoxText}>About</Text>
                   </TouchableOpacity>
             </View>
-            {/* contnet section */}
+            {/* Features section */}
+            <View style={styles.featuresSection}>
+              <Text style={styles.featuresTitle}>Popular Features</Text>
+
+              <ScrollView style={styles.featuresContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
+              <TouchableOpacity style={styles.featureCard}>
+                      <MaterialIcons name="star" size={50} color="#2196f3"></MaterialIcons>
+                      <Text style={styles.featureText}>Fauture 1</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.featureCard}>
+                      <MaterialIcons name="flash-on" size={50} color="#2196f3"></MaterialIcons>
+                      <Text style={styles.featureText}>Fauture 2</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.featureCard}>
+                      <MaterialIcons name="build" size={50} color="#2196f3"></MaterialIcons>
+                      <Text style={styles.featureText}>Fauture 3</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.featureCard}>
+                      <MaterialIcons name="build" size={50} color="#2196f3"></MaterialIcons>
+                      <Text style={styles.featureText}>Fauture 3</Text>
+                  </TouchableOpacity>
+              </ScrollView>
+            </View>
+            {/* Testimonials section */}
+            <View style={styles.testimonialsSection}>
+              <Text style={styles.testimonialsTitle}>Waht people Say</Text>
+              <View style={styles.testimonialsCard}>
+                 <Text style={styles.testimonialsText}>
+                    This app has completly chage the way i manage my daily tasks.
+                 </Text>
+              </View> 
+              <View style={styles.testimonialsCard}>
+                 <Text style={styles.testimonialsText}>
+                    This app has completly chage the way i manage my daily tasks.
+                 </Text>
+              </View> 
+              <View style={styles.testimonialsCard}>
+                 <Text style={styles.testimonialsText}>
+                    This app has completly chage the way i manage my daily tasks.
+                 </Text>
+              </View> 
+            </View>
         </ScrollView>
 
   )
@@ -89,8 +130,53 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color:'#333333'
+  },featuresSection:{
+    padding: 20,
+    backgroundColor: '#f5f5f5',
+    marginVertical: 20,
+  },featuresTitle:{
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333333',
+    marginLeft: 20,
+    marginBottom: 20,
+  },featureCard:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#f5f5f5',
+    width:120,
+    height: 120,
+    borderRadius: 10,
+    marginHorizontal: 10,
+    elevation:5,
+  },featuresContainer:{
+    paddingHorizontal: 30,
+  },featureText:{
+    marginTop: 5,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color:'#333333',
+    textAlign:'center'
+  },testimonialsSection:{
+     marginVertical: 20,
+     paddingHorizontal: 20,
+  },testimonialsTitle:{
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333333',
+    marginLeft: 20,
+    marginBottom: 20,
+  },testimonialsCard:{
+    backgroundColor: '#f5f5f5',
+    borderRadius: 10,
+    padding: 20,
+    marginBottom: 20,
+    elevation:5,
+  },testimonialsText:{
+    fontSize: 18,
+    fontStyle: 'italic',
+    color: '#555555',
   }
-
 
 
   // title: {
